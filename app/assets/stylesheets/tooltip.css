@@ -1,0 +1,25 @@
+.tooltip[data-tooltip-placement^=top]>.tooltip-arrow {
+  top: -6px;
+}
+
+.tooltip-arrow {
+  background: inherit;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  left: 1rem;
+}
+
+[role=tooltip]>.tooltip-arrow:after {
+  content: "";
+  visibility: visible;
+  background: inherit;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  transform: rotate(225deg);
+  border: 2px solid transparent;
+  border-bottom-color: #024a71; 
+  border-right-color: #024a71;
+}

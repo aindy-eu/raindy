@@ -1,0 +1,12 @@
+en:
+  navigations:
+    logged_in:
+      main_nav:
+        sign_out: Sign out
+        chats: Chats
+        help: Help
+        settings: Settings
+        home: Home
+        reload: Reload
+      chats_nav:
+        close: Close chat navigation

@@ -1,0 +1,88 @@
+<nav class="fixed bottom-10 right-6" 
+  data-controller="components--dropdown"
+  data-app--pwa-target="pwaStandalone"
+  data-action="
+    keydown.esc->components--dropdown#closeMenu:prevent 
+    keydown.up->components--dropdown#focusPreviousItem:prevent 
+    keydown.left->components--dropdown#focusPreviousItem:prevent 
+    keydown.down->components--dropdown#focusNextItem:prevent 
+    keydown.right->components--dropdown#focusNextItem:prevent"
+  aria-label="Main navigation">
+
+  <button type="button" 
+    class="z-10 relative inline-flex items-center justify-center p-2 
+          bg-white dark:bg-sky-700 hover:bg-gray-100 dark:hover:bg-gray-700 
+          text-gray-700 dark:text-white hover:text-gray-400 
+          rounded-full shadow-lg focus-inset 
+          aria-expanded:bg-gray-100 dark:aria-expanded:bg-gray-700 
+          cursor-pointer"
+    id="dropdown-menu-main-button"
+    data-components--dropdown-target="menuButton"
+    data-action="components--dropdown#toggle"
+    tabindex="0"
+    aria-expanded="false"
+    aria-controls="dropdown-menu-main"
+    aria-haspopup="true"
+    aria-label="Open main navigation">
+    <%= render partial: "shared/icons/icon_settings" %>
+  </button>
+
+  <ul class="z-20 absolute bottom-12 right-0 
+            bg-white dark:bg-black 
+            w-36 rounded-lg hidden 
+            text-sm text-left rounded-lg 
+            border border-gray-200 
+            overflow-hidden 
+            origin-top-right 
+            divide-y divide-gray-100 
+            ring-1 shadow-lg ring-black/5 focus:outline-hidden" 
+    id="dropdown-menu-main"
+    data-components--dropdown-target="menu"
+    role="menu" 
+    hidden
+    aria-orientation="vertical"
+    aria-labelledby="dropdown-menu-main-button">
+
+    <li role="none" class="p-0.75">
+      <%= button_to t("navigations.logged_in.main_nav.sign_out"), 
+          session_path, 
+          method: :delete, 
+          form: { class: "block" },
+          data: {
+            components__dropdown_target: "menuItem",
+          },
+          role: "menuitem",
+          tabindex: "-1",
+          class: "text-start w-full dropdown-menu-item focus-inset cursor-pointer" %>
+    </li>
+    <li role="none" class="p-0.75">
+      <a href="<%= chats_path %>" 
+          class="block dropdown-menu-item focus-inset" 
+          role="menuitem" 
+          data-components--dropdown-target="menuItem"
+          tabindex="-1"
+          <%= 'aria-current="page"' if current_page?(chats_path) %>>
+        <%= t("navigations.logged_in.main_nav.chats") %>
+      </a>
+    </li>
+    <li role="none" class="p-0.75">
+      <a href="<%= root_path %>" 
+          class="block dropdown-menu-item focus-inset"
+          role="menuitem" 
+          data-components--dropdown-target="menuItem"
+          tabindex="-1">
+        <%= t("navigations.logged_in.main_nav.home") %>
+      </a>
+    </li>
+    <li role="none" class="p-0.75">
+      <button type="button" 
+          class="text-start dropdown-menu-item focus-inset cursor-pointer"
+          role="menuitem" 
+          data-components--dropdown-target="menuItem"
+          data-action="helpers--application#reloadApp"
+          tabindex="-1">
+        <%= t("navigations.logged_in.main_nav.reload") %>
+      </button>
+    </li>
+  </ul>
+</nav>

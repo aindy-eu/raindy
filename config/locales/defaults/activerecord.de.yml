@@ -1,0 +1,31 @@
+de:
+  activerecord:
+    models:
+      user:
+        one: Benutzer
+        other: Benutzer
+      chat:
+        one: Chat
+        other: Chats
+        name: Chat Name
+        new: Neuer Chat
+    attributes:
+      user:
+        created_at: Erstellt am
+        email_address: E-Mail Adresse
+        password: Passwort
+        updated_at: Aktualisiert am
+    errors:
+      messages:
+        record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: %{errors}"
+        restrict_dependent_destroy:
+          has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz existiert.
+          has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.
+      models:
+        chat:
+          attributes:
+            name:
+              blank: "Chatname muss ausgefüllt werden"
+              invalid_characters: "Einige Sonderzeichen wie $, %, #, @ oder Anführungszeichen sind nicht erlaubt."
+
+

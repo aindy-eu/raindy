@@ -1,0 +1,4 @@
+<% reset_link = link_to(t("authentication.emails.password.reset.html.link_text"), edit_password_url(@user.password_reset_token)) %>
+
+<p><%= t("authentication.emails.password.reset.welcome", email: @user.email_address) %></p>
+<p><%= t("authentication.emails.password.reset.html.body", link: reset_link).html_safe %></p>

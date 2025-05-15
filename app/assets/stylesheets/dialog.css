@@ -1,0 +1,44 @@
+/* Prevent body scrolling when dialog is open */
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* Animate backdrop */
+dialog::backdrop {
+  /* No blur for now */
+  backdrop-filter: blur(0);
+  opacity: 0;
+  background-color: hsla(211, 100%, 9%, 0);
+  transition: opacity 250ms ease-in-out, backdrop-filter 250ms ease-in-out;
+}
+
+dialog[open]::backdrop {
+  opacity: 1;
+  background-color: hsla(211, 100%, 9%, 0.35);
+  animation: backdrop-fade 250ms forwards ease;
+}
+
+/* 
+ * Backdrop fade-out when closing 
+ * 'closing' is a custom attribute we set if close is triggered
+ * This is used in combination with our Drawer that slides in/out
+ */
+dialog[closing]::backdrop {
+  opacity: 0;
+  backdrop-filter: blur(0);
+}
+
+@keyframes backdrop-fade {
+  from {
+    background: transparent;
+  }
+  to{
+    background: hsla(211, 100%, 9%, 0.35);
+  }
+}
+
+/* --------------------
+ * Couldn't get the example css code get to work on iOS 
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog 
+ */

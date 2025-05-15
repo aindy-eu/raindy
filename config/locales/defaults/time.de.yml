@@ -1,0 +1,11 @@
+de:
+  time:
+    am: vormittags
+    formats:
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
+      short: "%d. %B %Y %H:%M"
+      shorter: "%d.%m.%Y %H:%M"
+      hms: "%H:%M:%S"
+      rec_header: "%a. %d.%m.%y"
+    pm: nachmittags

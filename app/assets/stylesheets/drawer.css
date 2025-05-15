@@ -1,0 +1,22 @@
+/* Drawer Dialog animations */
+dialog.drawer-left[open] {
+  animation: slide-in-from-left 150ms forwards ease;
+}
+
+dialog.drawer-left[closing] {
+  pointer-events: none;
+  animation: slide-out-to-left 250ms forwards ease-in-out;
+}
+
+/* Drawer Keyframe animations */
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-out-to-left {
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,47 @@
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog -->
+<dialog class="drawer-left m-0 w-80 sm:w-96 h-dvh max-h-dvh focus-violet"
+  data-components--drawer-target="dialog"
+  data-action="click->components--drawer#backdropClose"
+  aria-labelledby="drawer-title"
+  aria-describedby="drawer-description"
+  aria-hidden="true">
+  
+  <!-- 
+    Note: The <dialog> element creates a modal context — 
+    everything outside becomes inert and hidden to assistive tech, 
+    and no z-indexed elements outside can appear above it.
+    Flash messages inside the drawer must be rendered here if needed.
+    MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+  -->
+  <div id="dialog_flash_messages" class="z-30 fixed top-1 left-0 right-0 w-96/100 mx-auto"></div>
+
+  <!-- Drawer Panel -->
+  <div class="flex flex-col h-dvh dark:bg-gray-800 pb-5">
+    <!-- Drawer Head -->
+    <div class="flex justify-between py-1.25 mb-3 items-center bg-gray-100 dark:bg-gray-900">
+      <!-- Title -->
+      <h2 class="flex pl-4 text-lg font-semibold text-gray-900 dark:text-white" id="drawer-title">
+        <%= t("chats.drawer.title") %>
+      </h2>
+      <!-- Close Drawer -->
+      <button type="button"
+        class="btn-close flex mr-2"
+        data-action="components--drawer#close"
+        autofocus
+        aria-label="<%= t('navigations.logged_in.chats_nav.close') %>"
+        tabindex="0">
+        <span class="sr-only"><%= t("navigations.logged_in.chats_nav.close") %></span>
+        <%= render partial: "shared/icons/icon_close" %>
+      </button>
+    </div>
+    <!-- Drawer Content -->
+    <div class="relative flex-col flex-1 transition-opacity duration-500 px-2 py-3 overflow-y-auto">
+      <p class="sr-only" id="drawer-description"><%= t("chats.drawer.description") %></p>
+      <!-- Include chats/index view -->
+      <%= turbo_frame_tag "chats_index", class: "w-full", src: chats_path do %>
+        Loading ...
+      <% end %>  
+    </div>
+  </div>
+
+</dialog>

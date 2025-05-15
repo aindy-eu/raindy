@@ -1,0 +1,33 @@
+en:
+  authentication:
+    button:
+      sign_in: "Sign in"
+      sign_out: "Sign out"
+    sessions:
+      new:
+        headline: "Sign in to your account"
+    alerts:
+      not_authenticated: "Authenticate to access this page."
+      invalid_credentials: "Try another email address or password."
+      rate_limit_exceeded: "Too many attempts. Try again later."
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully"
+    passwords:
+      links:
+        forgot_pwd: "Forgot password?"
+      notices:
+        reset_instructions_sent: "Password reset instructions sent (if user with that email address exists)."
+        password_reset: "Password has been reset."
+      alerts:
+        passwords_did_not_match: "Passwords did not match."
+        invalid_reset_link: "Password reset link is invalid or has expired."
+    emails:
+      password:
+        reset:
+          subject: "Reset your password"
+          welcome: "Hello %{email},"
+          html:
+            body: "you can reset your password within the next 15 minutes on this %{link}."
+            link_text: "password reset page"
+          text:
+            body: "You can reset your password within the next 15 minutes on this password reset page:"

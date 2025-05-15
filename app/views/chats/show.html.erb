@@ -1,0 +1,12 @@
+<% content_for :title, t("helpers.navigation.show", model: Chat.model_name.human) %>
+
+<div class="container mx-auto p-6">
+  <h1 class="font-light text-4xl mb-4">
+    <%= @chat.name %>
+    <span class="float-left me-2 p-2.5 text-gray-500 cursor-pointer hover:text-gray-700 hover:bg-gray-100 rounded-full">
+      <%= render partial: "shared/icons/icon_copy" %>
+    </span>
+  </h1>
+
+  <%= render partial: "shared/placeholder" %>
+</div>

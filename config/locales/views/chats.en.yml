@@ -1,0 +1,16 @@
+en:
+  chats:
+    no_chats: No chats found.
+    drawer:
+      title: Chats
+      description: The sidebar shows all chats in a list. You can create a new chat, navigate to a chat, rename it, or delete it.
+    chat:
+      rename: Rename Chat
+      copy: Copy Chat Name
+      form_new_aria: Create Chat
+      form_edit_aria: Edit Chat
+      form_cancel_aria: Cancel editing Chat
+    form:
+      form_edit_name:
+        save_aria_hint: This field is saved when leaving or pressing Enter. Escape cancels.
+      name_hint: "Please avoid characters like $, %, #, @, quotes, or slashes /, \\."

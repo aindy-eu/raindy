@@ -1,0 +1,29 @@
+en:
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+      chat:
+        one: Chat
+        other: Chats
+        name: Chat name
+        new: New Chat
+    attributes:
+      user:
+        created_at: Created at
+        email_address: "Email address"
+        password: Password
+        updated_at: Updated at
+    errors:
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        restrict_dependent_destroy:
+          has_one: Cannot delete record because a dependent %{record} exists
+          has_many: Cannot delete record because dependent %{record} exist
+      models:
+        chat:
+          attributes:
+            name:
+              blank: "Chat name can't be blank"
+              invalid_characters: "Some special characters like $, %, #, @, or quotes aren’t allowed."

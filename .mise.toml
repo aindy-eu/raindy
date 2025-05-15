@@ -1,0 +1,3 @@
+[tools]
+# Ruby version for Rails 8
+ruby = "3.4.1"

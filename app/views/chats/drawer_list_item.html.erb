@@ -1,0 +1,10 @@
+<% content_for :title, t("helpers.navigation.show", model: Chat.model_name.human) %>
+
+<div class="container mx-auto p-6">
+  <h1 class="font-light text-4xl mb-4"><%= @chat.name %></h1>
+
+  <!-- The _chat partial contains the turbo_frame_tag dom_id(chat) -->
+  <%= render @chat %>
+
+  <%= link_to t("helpers.navigation.back", model: Chat.model_name.human), chats_path, class: "text-center mt-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+</div>

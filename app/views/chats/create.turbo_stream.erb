@@ -1,0 +1,5 @@
+<%= turbo_stream.prepend "chats", partial: "chat", locals: { chat: @chat } %>
+<%= turbo_stream.update "chats_new", partial: "form_new", locals: { chat: Chat.new } %>
+<% if @first_chat %>
+  <%= turbo_stream.remove "no_chats_hint" %>
+<% end %>

@@ -1,0 +1,11 @@
+en:
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %B %Y %H:%M"
+      shorter: "%d/%m/%Y %H:%M"
+      hms: "%H:%M:%S"
+      rec_header: "%a, %d/%m/%y"
+    pm: pm

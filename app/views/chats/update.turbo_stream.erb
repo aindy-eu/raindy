@@ -1,0 +1,9 @@
+<%= turbo_stream.replace dom_id(@chat), partial: "chat", locals: { chat: @chat } %>
+
+<%= turbo_stream.replace(
+    "dialog_flash_messages",
+    partial: "shared/flash_messages", 
+    locals: { 
+      flash: flash,
+      dialog_message: true
+     }) %>

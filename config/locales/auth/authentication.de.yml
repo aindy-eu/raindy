@@ -1,0 +1,33 @@
+de:
+  authentication:
+    button:
+      sign_in: "Anmelden"
+      sign_out: "Abmelden"
+    sessions:
+      new:
+        headline: "In Ihrem Account anmelden"
+    alerts:
+      not_authenticated: "Authentifizieren Sie sich, um auf diese Seite zuzugreifen."
+      invalid_credentials: "Versuchen Sie es mit einer anderen E-Mail-Adresse oder einem anderen Passwort."
+      rate_limit_exceeded: "Zu viele Versuche. Bitte versuchen Sie es später noch einmal."
+      signed_in: "Erfolgreich angemeldet."
+      signed_out: "Erfolgreich abgemeldet."
+    passwords:
+      links:
+        forgot_pwd: "Passwort vergessen?"
+      notices:
+        reset_instructions_sent: "Anweisungen zum Zurücksetzen des Passworts wurden gesendet (falls ein Benutzer mit dieser E-Mail-Adresse existiert)."
+        password_reset: "Das Passwort wurde zurückgesetzt."
+      alerts:
+        passwords_did_not_match: "Die Passwörter stimmen nicht überein."
+        invalid_reset_link: "Der Link zum Zurücksetzen des Passworts ist ungültig oder abgelaufen."
+    emails:
+      password:
+        reset:
+          subject: "Passwort zurücksetzen"
+          welcome: "Hallo %{email},"
+          html:
+            body: "Sie können Ihr Passwort innerhalb der nächsten 15 Minuten über diese %{link} zurücksetzen."
+            link_text: "Passwort Vergessen Seite"
+          text:
+            body: "Sie können Ihr Passwort innerhalb der nächsten 15 Minuten auf dieser Seite zurücksetzen:"

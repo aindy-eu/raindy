@@ -1,0 +1,10 @@
+.svg-icon {
+  stroke-width: 1.5;
+  flex-shrink: 0;
+  display: block;
+}
+
+.icon-lg {
+  min-width: 2rem;
+  width: 2rem;
+}

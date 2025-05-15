@@ -1,0 +1,5 @@
+<div id="<%= 'dialog_' if defined?(dialog_message) %>flash_messages" class="z-30 fixed top-1 left-0 right-0 w-96/100 mx-auto">
+  <% flash.each do |key, value| %>
+    <%= flash_alert(key, value) %>
+  <% end %>
+</div>

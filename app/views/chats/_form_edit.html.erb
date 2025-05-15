@@ -1,0 +1,89 @@
+<%= form_with(
+      model: chat, 
+      data: {
+        controller: "chats--chat-edit",
+        action: "
+          keydown.esc->chats--chat-edit#cancelEdit:prevent 
+          keydown.shift->chats--chat-edit#detectShiftTab
+          keydown.tab->chats--chat-edit#detectTab
+        "
+      },
+      html: { 
+        role: "form",
+        aria: {
+          label: t("chats.chat.form_edit_aria")
+        }
+       },
+      class: "w-full block relative"
+    ) do |form| %>
+
+  <div class="w-full flex flex-col gap-2 xs:gap-4 sm:flex-row">
+    <div class="relative z-0 w-full">
+      <%= form.label :name, t("activerecord.models.chat.name"), class: "sr-only" %>
+      <%= form.text_field :name,
+        placeholder: "",
+        autofocus: true,
+        required: true,
+        pattern: Chat.strict_html_pattern,
+        title: t("chats.form.name_hint"),
+        data: {
+          action: "blur->chats--chat-edit#leaveInputField:prevent",
+          chats__chat_edit_target: "chatNameInput",
+          current_value: chat.name
+        },
+        aria: { 
+          label: t("activerecord.models.chat.name"),
+          invalid: chat.errors[:name].any?,
+          describedby: "chat_name_error chat_name_hint"
+        },
+        class: [
+          "block w-full px-2 py-1.75 bg-transparent caret-blue-500 rounded-lg text-base dark:text-white inset-ring focus-input", 
+          {"inset-ring-gray-400": chat.errors[:name].none?, "inset-ring-red-400": chat.errors[:name].any?}
+        ] %>
+    </div>
+
+    <span id="chat_name_hint" class="sr-only text-sm">
+      <%= t("chats.chat.form.form_edit_name.save_aria_hint") %>
+    </span>
+
+    <!-- 
+      This chat actions are hidden, because we use detect "Tab", "Shift & Tab", "Enter", "Escape".
+      The click action shouldn't be possible, so just in case ;)
+     -->
+    <div class="hidden w-auto gap-3 flex justify-between items-end"
+         role="group" 
+         aria-label="<%= t("helpers.actions", model: Chat.model_name.human) %>">
+      <%= form.submit(
+        t("helpers.submit.update", model: Chat.model_name.human),
+        data: {
+          action: "chats--chat-edit#submitEditForm:prevent",
+          chats__chat_edit_target: "submitEditFormButton"
+        },
+        aria: {
+          hidden: true
+        },
+        class: "btn-primary self-center") %>
+
+      <%= link_to t("helpers.button.cancel"), 
+          drawer_list_item_chat_path(chat), 
+          data: {
+            chats__chat_edit_target: "cancelEditButton",
+            turbo_frame: dom_id(chat)
+          }, 
+          aria: {
+            label: t("chats.chat.form_cancel_aria")
+          },
+          role: "button",
+          class: "btn-danger-outline self-center" %>
+    </div>
+  </div>
+
+  <% if chat.errors[:name].any? %>
+    <%= render partial: "shared/validation_tooltip", 
+          locals: { 
+            errors: chat.errors[:name], 
+            form: form, 
+            field_name: :name 
+          } %>
+  <% end %>
+<% end %>

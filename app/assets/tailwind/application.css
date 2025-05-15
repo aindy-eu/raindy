@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  /* 30rem = 480px */
+  --breakpoint-xs: 30rem;
+  --shadow-lg: 0 0 8px 1px rgba(0, 0, 0, 0.25);
+}
+
+@layer components {
+
+  /* Button Elements */
+  .btn-primary {
+    @apply rounded-md px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-sm text-white cursor-pointer;
+
+    /* Basic focus state - always visible
+       Used to demonstrate traditional focus handling
+       Triggers on all focus events (mouse, keyboard, programmatic) */
+    @apply focus:outline-2 focus:outline-offset-2 focus:outline-violet-500;
+
+    /* Modern focus-visible state - intelligent focus handling
+       Only shows focus ring for keyboard navigation
+       Provides cleaner UI for mouse users while maintaining accessibility */
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500;
+  }
+
+  .btn-primary:disabled {
+    @apply bg-blue-300 text-gray-600 cursor-not-allowed;
+  }
+
+  .btn-secondary-outline {
+    @apply rounded-md px-2.5 py-1.25 cursor-pointer;
+    @apply bg-transparent hover:bg-gray-100;
+    @apply border border-sky-900 dark:border-sky-400;
+    @apply text-sm text-sky-900 dark:text-sky-400;
+    @apply focus:outline-2 focus:outline-offset-2 focus:outline-violet-500;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500;
+  }
+
+  .btn-secondary-outline:disabled {
+    @apply bg-sky-300 cursor-not-allowed;
+  }
+
+  .btn-danger-outline {
+    @apply rounded-md px-2.5 py-1.25 cursor-pointer;
+    @apply bg-transparent hover:bg-gray-100;
+    @apply border border-red-600 dark:border-red-400;
+    @apply text-sm text-red-600 dark:text-red-400;
+    @apply focus:outline-2 focus:outline-offset-2 focus:outline-violet-500;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500;
+  }
+
+  .btn-danger-outline:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .btn-close {
+    @apply p-2 rounded-full cursor-pointer;
+    @apply bg-transparent hover:bg-gray-200;
+    @apply text-gray-400 hover:text-sky-700;
+    @apply focus:inset-ring-2 focus:inset-ring-violet-500 focus:outline-hidden;
+    @apply focus-visible:inset-ring-2 focus-visible:inset-ring-violet-500 focus-visible:outline-hidden;
+  }
+
+  /* Form Elements */
+  .input-select {
+    @apply col-start-1 row-start-1 p-2 ps-4 pe-9 w-28;
+    /* 'appearance-none' - Remove default browser styling for normal mode */
+    /* 'forced-colors:appearance-auto' - Use system colors for high contrast mode */
+    @apply rounded-lg appearance-none forced-colors:appearance-auto;
+    @apply text-gray-700 dark:text-gray-200;
+    @apply border border-gray-300 dark:border-gray-600 hover:border-cyan-500 dark:hover:border-cyan-700;
+    @apply bg-gray-50 hover:bg-white dark:bg-gray-800 dark:hover:bg-gray-700;
+  }
+
+  /* Focus States */
+  .focus-default {
+    @apply focus:rounded-xs focus:outline-2 focus:outline-offset-2 focus:outline-blue-600;
+  }
+
+  .focus-input {
+    @apply focus:rounded-xs focus:outline-2 focus:outline-offset-2 focus:outline-blue-400;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400;
+  }
+
+  .focus-violet {
+    @apply focus:rounded-xs focus:outline-2 focus:outline-offset-2 focus:outline-violet-500;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500;
+  }
+
+  .focus-inset {
+    @apply focus:inset-ring-2 focus:inset-ring-violet-500 focus:outline-hidden;
+    @apply focus-visible:inset-ring-2 focus-visible:inset-ring-violet-500 focus-visible:outline-hidden;
+  }
+
+  /* Chat Components */
+  .chat-action-text {
+    @apply hidden sm:block;
+  }
+
+  .drawer-left .chat-action-text {
+    @apply hidden;
+  }
+
+  .drawer-left .active-chat {
+    @apply rounded-lg bg-gray-100 dark:bg-gray-700 border-1 border-gray-200 dark:border-gray-600;
+  }
+
+  /* Navigation Components */
+  .dropdown-menu-item {
+    @apply pl-4 pe-2 py-2 rounded-md cursor-pointer whitespace-nowrap w-full;
+    @apply bg-white dark:bg-black hover:bg-gray-100 dark:hover:bg-gray-700;
+    @apply focus:bg-gray-100 dark:focus:bg-gray-700;
+    @apply text-gray-900 dark:text-white;
+  }
+
+  .dropdown-menu-item[aria-current="page"] {
+    @apply bg-gray-100 dark:bg-gray-700;
+  }
+
+  .dropdown-menu-item:focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+
+  /* Alert Components */
+  .alert {
+    @apply flex justify-between items-center ps-6 pe-2 py-2 gap-3 text-lg rounded-lg cursor-pointer;
+    @apply focus:inset-ring-2 focus:inset-ring-violet-500 focus:outline-hidden;
+  }
+
+  /* Debugging Utilities */
+  .brd-amber {
+    @apply border border-dotted border-amber-500;
+  }
+
+  .brd-cyan {
+    @apply border border-dotted border-cyan-500;
+  }
+
+  .brd-green {
+    @apply border border-dotted border-green-500;
+  }
+}

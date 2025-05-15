@@ -1,0 +1,12 @@
+de:
+  navigations:
+    logged_in:
+      main_nav:
+        sign_out: Abmelden
+        chats: Chats
+        help: Hilfe
+        settings: Einstellungen
+        home: Startseite
+        reload: Neu laden
+      chats_nav:
+        close: "Chat Navigation schließen"

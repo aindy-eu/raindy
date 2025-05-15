@@ -1,0 +1,11 @@
+a[aria-disabled="true"] {
+  /* background-color: yellow !important; */
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+button[aria-disabled="true"] {
+  /* Debugging 
+  background-color: yellow !important;
+  opacity: 0.5; */
+}

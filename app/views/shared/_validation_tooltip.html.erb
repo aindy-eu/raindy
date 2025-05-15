@@ -1,0 +1,24 @@
+<% tooltip_id ||= "#{form.object_name}_#{field_name}_error" %>
+
+<div id="<%= tooltip_id %>"
+     class="inline-block tooltip absolute left-8 lg:left-16 min-w-3xs max-w-8/10 z-10 px-3 py-2 rounded-sm shadow-lg text-sm font-base text-sky-900 dark:text-white bg-white dark:bg-sky-900 outline-2"
+     role="tooltip"
+     aria-live="polite"
+     data-tooltip-placement="top">
+
+  <div class="flex items-start">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-lg text-red-600">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+    </svg>
+
+    <div class="inline-block ms-3 divide-y divide-gray-200">
+      <% errors.each_with_index do |error, index| %>
+        <div class="text-sm text-gray-900 w-full mb-1 pb-1 [&:last-child]:mb-0 [&:last-child]:pb-0">
+          <%= error %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="tooltip-arrow"></div>
+</div>

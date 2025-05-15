@@ -1,0 +1,17 @@
+de:
+  chats:
+    no_chats: Keine Chats gefunden.
+    drawer:
+      title: Chats
+      description: Die Seitenleiste zeigt alle Chats in einer Liste. Du kannst einen neuen Chat erstellen, zu einem Chat navigieren, ihn umbenennen oder löschen.
+    chat:
+      rename: Chat umbenennen
+      copy: Chat-Namen kopieren
+      form_new_aria: Chat erstellen
+      form_edit_aria: Chat bearbeiten
+      form_cancel_aria: Chat bearbeitung abbrechen
+    form:
+      form_edit_name:
+        save_aria_hint: Dieses Feld wird beim Verlassen oder Drücken von Enter gespeichert. Escape bricht ab.
+      name_hint: "Bitte vermeide Zeichen wie $, %, #, @, Anführungszeichen oder Schrägstriche /, \\."
+

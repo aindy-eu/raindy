@@ -1,0 +1,31 @@
+<% content_for :title, "Chats" %>
+
+<div class="container relative mx-auto lg:w-3xl py-6">
+  <h1 class="font-light text-4xl mb-4 ms-0.5">Chats</h1>
+
+  <%= turbo_frame_tag "chats_index", class: "this-class-never-gets-applied when-used-with-turbo" do %>
+
+    <%= turbo_frame_tag "chats_new", class: "flex mb-3 px-2 w-full min-h-[2.875rem]", src: new_chat_path %>
+
+    <div id="chats"
+      role="list"
+      data-controller="chats--chat-list"
+      data-chats--chat-list-edit-chat-value="false"
+      data-chats--chat-list-chat-edit-finished-value="false"
+      data-action="
+        components--drawer:open@window->chats--chat-list#openDrawer 
+        keyup.shift+tab->chats--chat-list#shiftTabKeyPressed
+        keyup.tab->chats--chat-list#tabKeyPressed"
+      class="w-full dark:text-white" >
+      <p><%#= params.inspect %></p>
+
+      <% if @chats.any? %>
+        <% @chats.each do |chat| %>
+          <%= render chat %>
+        <% end %>
+      <% else %>
+        <p id="no_chats_hint" class="text-center my-10"><%= t("chats.no_chats") %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,63 @@
+<%= turbo_frame_tag dom_id(chat), 
+    role: "listitem", 
+    class: "w-full block",
+    data: { chats__chat_list_target: "chatItem" } do %>
+
+  <div class="chat-items 
+              w-full flex items-center 
+              gap-5 py-0.75 pe-1 
+              rounded-lg 
+              hover:bg-gray-200 dark:hover:text-gray-800">
+    <!-- https://turbo.hotwired.dev/reference/frames#frame-with-overwritten-navigation-targets -->
+    <!-- https://turbo.hotwired.dev/handbook/drive#prefetching-links-on-hover -->
+    <%= link_to chat.name, 
+        chat_path(chat), 
+        tabindex: "0",
+        title: chat.name,
+        data: { 
+          turbo_frame: "_top", 
+          turbo_prefetch: "false",
+          chats__chat_list_target: "linkToChat"
+        },
+        class: "ps-2 py-1.5 text-light text-sm grow overflow-hidden whitespace-nowrap text-ellipsis focus-default" %>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role -->
+    <div class="flex space-x-1 sm:space-x-3"
+         role="group" 
+         aria-label="<%= t("helpers.actions", model: Chat.model_name.human) %>">
+      <%= link_to edit_chat_path(chat), 
+          role: "button",
+          tabindex: "0",
+          aria: { label: t("chats.chat.rename") },
+          data: { 
+            turbo_frame: dom_id(chat),
+            chats__chat_list_target: "editChatLink",
+            # Relies on default HTML behavior: both click and Enter trigger this link.
+            # No need to specify 'click->' for Stimulus – it just works.
+            action: "chats--chat-list#editChat"
+          },
+          class:  "btn-secondary-outline flex justify-between gap-2 border-0" do %>
+        <%= render partial: "shared/icons/icon_edit" %>
+        <p class="chat-action-text"><%= t("helpers.button.rename") %></p>
+      <% end %>
+
+      <%= button_to chat, 
+          method: :delete,
+          tabindex: "0",
+          form: { class: "self-center" },
+          aria: { label: t("helpers.submit.delete", model: Chat.model_name.human) },
+          class: "btn-danger-outline flex justify-between gap-2 border-0", 
+          data: { 
+            turbo_confirm: t("helpers.confirm"),
+            # Stimulus action handles both click and Enter (via button submit).
+            # Handled automatically as <button> triggers form submission on Enter.
+            action: "chats--chat-list#deleteChat",
+            chats__chat_list_target: "deleteChat"
+          } do %>
+        <%= render partial: "shared/icons/icon_delete" %>
+        <p class="chat-action-text"><%= t("helpers.button.delete") %></p>
+      <% end %>
+
+    </div>
+  </div>
+<% end %>

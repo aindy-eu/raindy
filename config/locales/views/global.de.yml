@@ -1,0 +1,19 @@
+de:
+  email: E-Mail Adresse
+  password: Passwort
+  alerts:
+    success:
+      updated: Mein %{text} aktualisiert!
+    error:
+      not_updated: Uups - Wir konnten Ihr %{text} nicht aktualisieren.
+  views:
+    application:
+      html_head:
+        title: raindy
+        description: Die Beschreibung für raindy
+    backoffice:
+      html_head:
+        title: Backoffice | raindy
+    dashboard:
+      index:
+        h1: Dashboard

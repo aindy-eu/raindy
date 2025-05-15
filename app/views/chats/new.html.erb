@@ -1,0 +1,11 @@
+<% content_for :title, t("helpers.navigation.new", model: Chat.model_name.human) %>
+
+<div class="container mx-auto p-6">
+  <h1 class="font-light text-4xl mb-4"><%= t("helpers.navigation.new", model: Chat.model_name.human) %></h1>
+
+  <%= turbo_frame_tag "chats_new", class: "this-class-never-gets-applied when-used-with-turbo" do %>
+    <%= render partial: "form_new", locals: { chat: @chat } %>
+  <% end %>
+
+  <%= link_to t("helpers.navigation.back", model: Chat.model_name.human), chats_path, class: "sm:w-auto text-center mt-4 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium focus:outline-2 focus:outline-offset-2 focus:outline-violet-500" %>
+</div>

@@ -1,0 +1,5 @@
+<%= t("authentication.emails.password.reset.welcome", email: @user.email_address) %>
+
+<%= t("authentication.emails.password.reset.text.body") %>
+
+<%= edit_password_url(@user.password_reset_token) %>

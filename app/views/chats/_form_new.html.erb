@@ -1,0 +1,59 @@
+<%= form_with(
+      model: chat,
+      id: "chats_new_form_new",
+      html: { 
+        role: "form",
+        aria: {
+          label: t("chats.chat.form_new_aria")
+        }
+      },
+      class: "w-full block mb-2"
+    ) do |form| %>
+
+  <div class="w-full flex gap-2 xs:gap-4">
+    <div class="relative z-0 w-full">
+      <%= form.text_field :name,
+        id: "chat_chats-new-chat-name",
+        placeholder: " ",
+        autofocus: false,
+        value: chat.name,
+        disabled: false,
+        required: true,
+        pattern: Chat.strict_html_pattern,
+        title: t("chats.form.name_hint"),
+        aria: { 
+          label: t("activerecord.models.chat.new"),
+          invalid: chat.errors[:name].any?,
+          describedby: "chat_new_name_hint"
+        },
+        class: [
+          "block w-full p-2 pt-3 bg-transparent appearance-none focus:outline-none caret-blue-500 border-0 border-b-2 focus:border-sky-600 border-gray-200", 
+          {"border-gray-400": chat.errors[:name].none?, "border-red-400": chat.errors[:name].any?}
+        ] %>
+
+      <%= form.label "chats-new-chat-name", t("activerecord.models.chat.new"), class: "absolute duration-300 top-3 left-1 origin-0 text-gray-500 dark:text-white!" %>
+    </div>
+
+    <span id="chat_new_name_hint" class="sr-only text-sm">
+      <%= t("chats.form.form_new_name.save_aria_hint") %>
+    </span>
+
+    <%= form.button type: "submit", 
+        class: "btn-primary self-end rounded-full p-1.5", 
+        tabindex: "0",
+        aria: { label: t("helpers.submit.create", model: Chat.model_name.human) } do %>
+      <svg class="size-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+      </svg>
+    <% end %>
+  </div>
+
+  <% if chat.errors[:name].any? %>
+    <%= render partial: "shared/validation_tooltip", 
+          locals: { 
+            errors: chat.errors[:name], 
+            form: form, 
+            field_name: :name 
+          } %>
+  <% end %>
+<% end %>

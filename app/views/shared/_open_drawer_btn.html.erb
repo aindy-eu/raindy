@@ -1,0 +1,16 @@
+<button 
+  type="button" 
+  class="fixed bottom-10 left-6 p-2 
+    bg-white dark:bg-sky-800 hover:bg-cyan-600 dark:hover:bg-white 
+    text-gray-800 dark:text-white hover:text-white dark:hover:text-gray-800 
+    rounded-full shadow-lg border-gray-400 cursor-pointer focus-inset"
+  aria-label="<%= t('navigations.logged_in.chats_nav.close') %>"
+  aria-expanded="false"
+  aria-controls="drawer-left"
+  autofocus
+  tabindex="0"
+  data-components--drawer-target="drawerButton"
+  data-app--pwa-target="pwaStandalone"
+  data-action="components--drawer#open">
+  <%= render partial: "shared/icons/icon_drawer_left" %>
+</button>
