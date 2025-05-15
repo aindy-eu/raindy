@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Project Diagrams"
 description: "Mermaid diagrams documenting project architecture, workflows, and processes"
@@ -16,6 +17,7 @@ related_docs:
   - path: "/docs/diagrams/data-model.md"
   - path: "/docs/diagrams/app-architecture.md"
 ---
+-->
 
 # 1. Project Diagrams
 

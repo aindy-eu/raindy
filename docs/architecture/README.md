@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Architecture Overview"
 description: "Overview of system architecture, technical patterns, and UI/UX conventions"
@@ -22,6 +23,7 @@ related_docs:
   - path: "/docs/architecture/diagrams/README.md"
   - path: "/docs/testing/README.md"
 ---
+-->
 
 # Architecture Overview
 

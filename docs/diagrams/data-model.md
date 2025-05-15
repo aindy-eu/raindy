@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Data Model"
 description: "Mermaid class diagram illustrating the application's data model and relationships"
@@ -15,6 +16,7 @@ related_docs:
   - path: "/docs/diagrams/app-architecture.md"
   - path: "/docs/architecture/README.md"
 ---
+-->
 
 # Data Model
 

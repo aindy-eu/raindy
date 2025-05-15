@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Controller Testing Guidelines"
 description: "Standards for writing controller tests to verify HTTP-level interactions in a Rails 8 chat application using ActionDispatch::IntegrationTest"
@@ -17,6 +18,7 @@ related_docs:
   - path: "/docs/testing/system-testing-guidelines.md"
   - path: "/docs/testing/model-testing-guidelines.md"
 ---
+-->
 
 # Controller Testing Guidelines
 

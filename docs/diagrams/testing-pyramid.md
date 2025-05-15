@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Testing Pyramid"
 description: "Mermaid pyramid diagram illustrating the different types of tests and their relationships"
@@ -15,6 +16,7 @@ related_docs:
   - path: "/docs/testing/controller-testing-guidelines.md"
   - path: "/docs/testing/model-testing-guidelines.md"
 ---
+-->
 
 # Testing Pyramid
 

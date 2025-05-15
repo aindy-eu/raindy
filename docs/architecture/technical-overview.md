@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Technical Overview"
 description: "Overview of the technical architecture and conventions for this Rails 8 application"
@@ -29,6 +30,7 @@ related_docs:
   - path: "/docs/testing/system-testing-guidelines.md"
   - path: "/docs/testing/integration-testing-guidelines.md"
 ---
+-->
 
 # Technical Overview
 

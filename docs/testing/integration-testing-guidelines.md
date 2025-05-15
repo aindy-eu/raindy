@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Integration Testing Guidelines"
 description: "Concise guidelines for writing integration tests for multi-step, cross-controller flows in a Rails 8 chat application"
@@ -17,6 +18,7 @@ related_docs:
   - path: "/docs/testing/system-testing-guidelines.md"
   - path: "/docs/testing/model-testing-guidelines.md"
 ---
+-->
 
 # Integration Testing Guidelines
 

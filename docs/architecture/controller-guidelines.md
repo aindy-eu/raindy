@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Controller Guidelines"
 description: "Best practices and patterns for working with controllers in this Rails application"
@@ -23,6 +24,7 @@ related_docs:
   - path: "/docs/testing/system-testing-guidelines.md"
   - path: "/docs/testing/integration-testing-guidelines.md"
 ---
+-->
 
 # Controller Guidelines
 

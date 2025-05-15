@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Model Guidelines"
 description: "Conventions for writing and organizing ActiveRecord models in this Rails application"
@@ -25,6 +26,7 @@ related_docs:
   - path: "/docs/testing/model-testing-guidelines.md"
   - path: "/docs/ai/guidelines/ai-reviewer-guidelines.md"
 ---
+-->
 
 # Model Guidelines
 

@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Stimulus Component Guidelines"
 description: "Patterns and practices for creating and using Stimulus components"
@@ -27,6 +28,7 @@ related_docs:
   - path: "/docs/architecture/README.md"
   - path: "/docs/testing/stimulus-testing-guidelines.md"
 ---
+-->
 
 # Stimulus Component Guidelines
 

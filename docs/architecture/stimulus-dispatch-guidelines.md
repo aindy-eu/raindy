@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Stimulus Dispatch Guidelines"
 description: "Guidelines for cross-controller communication using dispatch in Stimulus"
@@ -25,6 +26,7 @@ related_docs:
   - path: "/docs/architecture/technical-overview.md"
   - path: "/docs/testing/stimulus-testing-guidelines.md"
 ---
+-->
 
 # Stimulus Dispatch Guidelines
 

@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Turbo Guidelines"
 description: "Concise guidelines for using Hotwire Turbo in this Rails application"
@@ -27,6 +28,7 @@ related_docs:
   - path: "/docs/testing/model-testing-guidelines.md"
   - path: "/docs/testing/system-testing-guidelines.md"
 ---
+-->
 
 # Turbo Guidelines
 

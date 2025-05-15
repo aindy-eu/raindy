@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Architecture-Testing Integration"
 description: "Mermaid diagram illustrating how architectural components are tested at different levels"
@@ -14,6 +15,7 @@ related_docs:
   - path: "/docs/diagrams/testing-pyramid.md"
   - path: "/docs/architecture/technical-overview.md"
 ---
+-->
 
 # Architecture-Testing Integration
 

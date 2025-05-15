@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Raindy: A Minimalist Rails 8 Chat App"
 description: "A minimalist Rails 8 chat application with Turbo Streams, Stimulus, accessibility, testing, and documentation"
@@ -20,6 +21,7 @@ related_docs:
   - path: "/docs/diagrams/README.md"
   - path: "/docs/testing/README.md"
 ---
+-->
 
 # Raindy: A Minimalist Rails 8 Chat App
 

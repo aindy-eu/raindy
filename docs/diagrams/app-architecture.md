@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Rails Application Architecture"
 description: "Mermaid diagram illustrating the Rails application architecture and component relationships"
@@ -15,6 +16,7 @@ related_docs:
   - path: "/docs/diagrams/data-model.md"
   - path: "/docs/architecture/README.md"
 ---
+-->
 
 # Rails Application Architecture
 

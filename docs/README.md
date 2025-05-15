@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Project Documentation"
 description: "Documentation for this Rails 8 application"
@@ -15,6 +16,7 @@ related_docs:
   - path: "/docs/diagrams/README.md"
   - path: "/docs/testing/README.md"
 ---
+-->
 
 # Project Documentation
 
