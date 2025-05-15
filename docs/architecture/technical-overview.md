@@ -134,9 +134,7 @@ See `app/models/concerns/sanitization_concern.rb` for sanitization logic.
 ## 6. Development Workflow
 
 ### Prerequisites
-- `mise` (version manager)
-- Homebrew (macOS)
-- Git
+- Ruby 3.4.1 (use [`mise`](https://mise.jdx.dev/) or your preferred version manager)
 
 ### Setup Steps
 1. **Install Tools and Dependencies**:
