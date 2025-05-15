@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Testing Overview"
 description: "An overview of the testing strategy for this chat application"
@@ -19,6 +20,7 @@ related_docs:
   - path: "/docs/testing/system-testing-guidelines.md"
   - path: "/docs/testing/testing-glossary.md"
 ---
+-->
 
 # Testing Overview
 
@@ -96,7 +98,6 @@ test/
 │   └── shared/
 │       └── flash_messages_view_test.erb
 ```
-
 - **controllers/**: HTTP and **Turbo Stream** tests for `ChatsController`.
 - **integration/**: Cross-controller flows (e.g., sign-in to chat creation).
 - **models/**: **Validations** and associations for `Chat`, `User`.

@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Model Testing Guidelines"
 description: "Standards for writing Minitest specs for Rails models in a Rails 8 chat application"
@@ -18,6 +19,7 @@ related_docs:
   - path: "/docs/testing/integration-testing-guidelines.md"
   - path: "/docs/testing/system-testing-guidelines.md"
 ---
+-->
 
 # Model Testing Guidelines
 

@@ -1,3 +1,4 @@
+<!--
 ---
 title: "System Testing Guidelines"
 description: "Standard for writing system tests to verify user interactions using Capybara and Minitest"
@@ -17,6 +18,7 @@ related_docs:
   - path: "/docs/testing/integration-testing-guidelines.md"
   - path: "/docs/testing/model-testing-guidelines.md"
 ---
+-->
 
 # System Testing Guidelines
 

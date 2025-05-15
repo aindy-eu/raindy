@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Testing Glossary"
 description: "Definitions for testing-related terms used in the project documentation"
@@ -18,6 +19,7 @@ related_docs:
   - path: "/docs/testing/controller-testing-guidelines.md"
   - path: "/docs/testing/model-testing-guidelines.md"
 ---
+-->
 
 # Testing Glossary
 
