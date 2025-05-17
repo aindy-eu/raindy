@@ -39,7 +39,7 @@ module Chats
       turbo_update_chat(@chat, name: "")
 
       assert_response :unprocessable_entity
-      assert_turbo_stream status: :unprocessable_entity, action: "replace", target: dom_id(@chat) do
+      assert_turbo_stream status: :unprocessable_entity, action: "update", target: dom_id(@chat) do
         assert_select "form[action*='#{chat_path(@chat)}']"
         assert_chat_name_errors
       end

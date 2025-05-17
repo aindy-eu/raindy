@@ -40,13 +40,13 @@ class ChatsControllerCreateTest < ActionDispatch::IntegrationTest
       turbo_create_chat(name: "")
     end
 
-    assert_turbo_stream status: :unprocessable_entity, action: "replace", target: "chats_new"
+    assert_turbo_stream status: :unprocessable_entity, action: "update", target: "chats_new"
   end
 
   test "create replaces form with errors and preserves user input" do
     turbo_create_chat(name: "$Invalid")
 
-    assert_turbo_stream status: :unprocessable_entity, action: "replace", target: "chats_new" do
+    assert_turbo_stream status: :unprocessable_entity, action: "update", target: "chats_new" do
       assert_select "input[name='chat[name]'][value='$Invalid']", count: 1
       # Server-side validation is tested here; JS tooltip testing should be handled in system tests
       # assert_select "div[role='tooltip']", I18n.t("activerecord.errors.models.chat.attributes.name.invalid_characters")
