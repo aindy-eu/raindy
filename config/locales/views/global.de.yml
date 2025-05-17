@@ -6,6 +6,7 @@ de:
       updated: Mein %{text} aktualisiert!
     error:
       not_updated: Uups - Wir konnten Ihr %{text} nicht aktualisieren.
+      internal: Ein interner Fehler ist aufgetreten. Bitte versuchen Sie es erneut.
   views:
     application:
       html_head:

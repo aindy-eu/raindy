@@ -22,4 +22,6 @@ Rails.application.routes.draw do
       get :drawer_list_item
     end
   end
+
+  post "/flash_message" => "flash_messages#create"
 end

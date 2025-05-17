@@ -6,6 +6,7 @@ en:
       updated: My %{text} updated!
     error:
       not_updated: Uups - We could not update the %{text} data.
+      internal: An internal error occurred. Please try again.
   views:
     application:
       html_head:
