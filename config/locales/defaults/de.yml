@@ -41,8 +41,11 @@ de:
     confirm: "Bist Du sicher?"
     actions: "%{model} Aktionen"
     created: "%{model} wurde erfolgreich erstellt"
+    created_failed: "%{model} konnte nicht erstellt werden"
     updated: "%{model} wurde erfolgreich aktualisiert"
+    update_failed: "%{model} konnte nicht aktualisiert werden"
     deleted: "%{model} wurde erfolgreich gelöscht"
+    delete_failed: "%{model} konnte nicht gelöscht werden"
     navigation:
       back: Zurück zu %{model}
       show: "%{model} anzeigen"

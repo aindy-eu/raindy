@@ -41,8 +41,11 @@ en:
     confirm: Are you sure?
     actions: "%{model} actions"
     created: "%{model} was successfully created."
+    created_failed: "%{model} could not be created."
     updated: "%{model} was successfully updated."
+    update_failed: "%{model} could not be updated."
     deleted: "%{model} was successfully deleted."
+    delete_failed: "%{model} could not be deleted."
     navigation:
       back: Back to %{model}
       show: Showing %{model}

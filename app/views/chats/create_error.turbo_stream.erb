@@ -1,1 +1,8 @@
-<%= turbo_stream.replace("chats_new", partial: "form_new", locals: { chat: @chat }) %>
+<%= turbo_stream.update("chats_new", partial: "form_new", locals: { chat: @chat }) %>
+
+<%= turbo_stream.replace("dialog_flash_messages",
+    partial: "shared/flash_messages", 
+    locals: { 
+      flash: flash,
+      dialog_message: true
+    }) %>

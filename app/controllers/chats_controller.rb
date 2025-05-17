@@ -34,6 +34,7 @@ class ChatsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to chats_path, notice: t("helpers.created", model: Chat.model_name.human) }
       else
+        flash.now[:alert] = t("helpers.created_failed", model: Chat.model_name.human)
         format.turbo_stream { render :create_error, status: :unprocessable_entity }
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -42,13 +43,13 @@ class ChatsController < ApplicationController
 
   # PATCH/PUT /chats/1
   def update
-    flash.now[:success] = t("helpers.updated", model: Chat.model_name.human)
-
     respond_to do |format|
       if @chat.update(chat_params)
+        flash.now[:success] = t("helpers.updated", model: Chat.model_name.human)
         format.turbo_stream
         format.html { redirect_to @chat, notice: t("helpers.updated", model: Chat.model_name.human) }
       else
+        flash.now[:alert] = t("helpers.update_failed", model: Chat.model_name.human)
         format.turbo_stream { render :update_error, status: :unprocessable_entity }
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -56,14 +57,45 @@ class ChatsController < ApplicationController
   end
 
   # DELETE /chats/1
+  # Attempts to destroy the chat using `destroy` (non-bang version).
+  # - Returns `true` if deletion succeeds
+  # - Returns `false` if deletion is blocked (e.g. callbacks or associations)
+  # - Does NOT raise an exception
+  # Use this version when you want to handle failure gracefully
   def destroy
-    flash.now[:success] = t("helpers.deleted", model: Chat.model_name.human)
+    if @chat.destroy
+      flash.now[:success] = t("helpers.deleted", model: Chat.model_name.human)
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to chats_path, status: :see_other, notice: t("helpers.deleted", model: Chat.model_name.human) }
+      end
+    else
+      flash.now[:alert] = t("helpers.delete_failed", model: Chat.model_name.human)
+      respond_to do |format|
+        format.turbo_stream { render :destroy_error, status: :unprocessable_entity }
+        format.html { redirect_to chats_path, alert: t("helpers.delete_failed", model: Chat.model_name.human) }
+      end
+    end
+  end
 
+  # Alternate version using `destroy!` (bang method). Hint: There is no route for this action.
+  # - Raises `ActiveRecord::RecordNotDestroyed` on failure
+  # - Use this version if you prefer fail-fast logic or want to rescue errors explicitly
+  # - Useful in service objects or when wrapping in a transaction
+  def destroy_with_exception_handling
+    # Destroy! - will raise if destruction fails
     @chat.destroy!
-
+    flash.now[:success] = t("helpers.deleted", model: Chat.model_name.human)
     respond_to do |format|
       format.turbo_stream
       format.html { redirect_to chats_path, status: :see_other, notice: t("helpers.deleted", model: Chat.model_name.human) }
+    end
+  rescue ActiveRecord::RecordNotDestroyed => e
+    Rails.logger.warn("Chat deletion failed: #{e.message}")
+    flash.now[:alert] = t("helpers.delete_failed", model: Chat.model_name.human)
+    respond_to do |format|
+      format.turbo_stream { render :destroy_error, status: :unprocessable_entity }
+      format.html { redirect_to chats_path, alert: t("helpers.delete_failed", model: Chat.model_name.human) }
     end
   end
 
