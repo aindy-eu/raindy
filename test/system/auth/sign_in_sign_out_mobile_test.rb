@@ -14,12 +14,12 @@ module Auth
     # This is exactly what are tests for - right ;)
 
     setup do
+      @user = create(:user)
       # Remove or comment out the skip to test this mobile test
       # with a none headless browser and slow down to see what is happening.
       # Then use rails test test/system/auth/sign_in_sign_out_mobile_test.rb
       # To only test this file
       skip "Skipping all mobile sign-in tests for educational purposes"
-      @user = create(:user)
     end
 
     # Debug helper method instead of our test_helpers/system/authentication_helper
