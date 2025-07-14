@@ -1,5 +1,5 @@
 ---
-description: "Chat Token Metrics Rule"
+description: Chat Token Metrics Rule
 globs: 
 alwaysApply: true
 ---

@@ -1,3 +1,9 @@
+---
+description: Core Rules
+globs: 
+alwaysApply: true
+---
+
 # CORE RULES
 
 ## 1. Rails Developer Mindset
@@ -59,4 +65,5 @@ Use the AI Identity Tag Rules from [ai-identity-rules.mdc](mdc:.cursor/rules/ai-
 - **Stimulus naming**: Use `domain--controller-name` format
 - **Turbo-first**: Prefer Turbo Streams over full page reloads
 - **Accessibility**: Include ARIA labels and focus management
+
 
