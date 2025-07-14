@@ -1,0 +1,62 @@
+# CORE RULES
+
+## 1. Rails Developer Mindset
+Proceed like a senior Rails developer. Follow Rails conventions, optimize for readability, maintainability, and simplicity. Prefer Rails idioms over generic solutions.
+
+## 2. Project Architecture Alignment
+- **Follow established patterns**: Use existing model concerns (`UuidConcern`, `SanitizationConcern`), controller structure, and Stimulus conventions
+- **Maintain consistency**: Match existing naming conventions for tests, controllers, and Stimulus components
+- **Respect the testing pyramid**: Write more model tests, fewer system tests
+
+## 3. Code Quality Standards
+- **Fewer lines of code**: Focus on clear, concise implementations
+- **Rails conventions first**: Use Rails idioms (e.g., `has_secure_password`, `normalizes`, strong parameters)
+- **Security by default**: Apply sanitization, validation, and authentication patterns from existing code
+
+## 4. Complete Implementation
+Do not stop working until features are fully implemented with:
+- Proper validations and error handling
+- Appropriate tests (model, controller, integration, or system)
+- I18n support for user-facing messages
+- Accessibility considerations (ARIA labels, focus management)
+
+## 5. Preserve Project Integrity
+- **Never delete existing comments** in the codebase
+- **Maintain existing patterns**: Follow established controller, model, and Stimulus structure
+- **Use existing helpers**: Leverage test helpers, authentication patterns, and shared concerns
+
+## 6. Communication Style
+- **Concise when requested**: If prompt contains "be short", answer directly with minimal explanations
+- **Technical accuracy**: Use Rails terminology correctly (Turbo Streams, Stimulus controllers, etc.)
+- **Context-aware**: Reference existing code patterns when explaining solutions
+
+## 7. Rails-Specific Practices
+- **Use strong parameters**: Prefer `params.expect()` over `params.permit()`
+- **Follow REST conventions**: Use standard Rails actions and routing
+- **Leverage Hotwire**: Use Turbo Streams and Stimulus for dynamic UI
+- **Test appropriately**: Match existing test patterns and naming conventions
+- **I18n everything**: Use I18n for all user-facing text
+
+## 8. Testing Philosophy
+- **Follow the testing pyramid**: More unit tests, fewer integration tests, minimal system tests
+- **Use existing test helpers**: Leverage authentication helpers, chat helpers, and factory patterns
+- **Test by concern**: Separate validation tests, association tests, etc.
+- **Use FactoryBot**: Prefer `build` over `create` when possible for speed
+
+## 9. AI Identity Verification
+- **Verify your identity**: Always double-check your AI model, version, and variant before using identity tags
+- **No assumptions**: If uncertain about your identity, ask the user to confirm your model details
+- **Commit message responsibility**: The user is responsible for providing the final commit message with correct AI identity
+- **AI provides staged changes only**: Use `git add` for changed files and provide commit message text for user to execute
+
+## 10. AI Identity Tag
+AI contributors must identify themselves using standardized identity tags.  
+Use the AI Identity Tag Rules from [ai-identity-rules.mdc](mdc:.cursor/rules/ai-identity-rules.mdc)
+
+## 11. Project-Specific Conventions
+- **UUIDs for all models**: Use `UuidConcern` for primary keys
+- **Sanitize user input**: Apply `SanitizationConcern` for XSS prevention
+- **Stimulus naming**: Use `domain--controller-name` format
+- **Turbo-first**: Prefer Turbo Streams over full page reloads
+- **Accessibility**: Include ARIA labels and focus management
+

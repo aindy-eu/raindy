@@ -1,0 +1,38 @@
+---
+description: "Chat Token Metrics Rule"
+globs: 
+alwaysApply: true
+---
+# Chat Token Metrics Rule
+
+## Purpose
+Provide simple, always-on transparency for token usage in every AI-human chat exchange. This supports the 5-Pillar Architecture by making resource usage visible and predictable.
+
+## Rule
+After every AI response, append a line in the following format:
+
+```
+Chat-T: {complete_chat_tokens_count} | This-T: {this_question_and_answer_tokens_count} | Chat-F: {unique_files_this_session} | This-F: {unique_files_this_exchange}
+```
+- **Chat-T** = Cumulative tokens for the entire chat/session so far
+- **This-T** = Tokens used for just this question/answer exchange
+- **Chat-F** = Total unique files touched in the session so far (read/write operations)
+- **This-F** = Unique files touched in the most recent exchange (Q/A pair)
+
+## Benefits
+- Users always know the token usage for planning, debugging, and cost awareness.
+- Minimal, unobtrusive, and easy to parse for both humans and AIs.
+
+## Example
+
+```
+Chat-T: 12,340 | This-T: 1,120 | Chat-F: 7 | This-F: 2
+```
+
+## Application
+- The line must be appended as the last statement in every AI response, regardless of length or context
+- Use comma separators for numbers ≥ 1,000 for readability
+- If no files are touched, use 0 for file counts
+
+## Maintenance
+- Review for clarity and user feedback monthly.
