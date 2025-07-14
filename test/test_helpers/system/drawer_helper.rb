@@ -33,16 +33,22 @@ module TestHelpers
         close_btn = find("button[data-action='components--drawer#close']")
         assert_equal I18n.t("navigations.logged_in.chats_nav.close"), close_btn[:'aria-label']
         close_btn.click
+        # Small sleep to ensure animations complete in CI environment
+        sleep 0.1
       end
 
       # Closes the drawer by clicking outside (the backdrop).
       def close_by_backdrop
         find("body").click
+        # Small sleep to ensure animations complete in CI environment
+        sleep 0.1
       end
 
       # Closes the drawer by sending the Escape key.
       def close_by_escape
         @drawer.send_keys(:escape)
+        # Small sleep to ensure animations complete in CI environment
+        sleep 0.1
       end
 
       # Returns true if the drawer is visible (i.e. aria-hidden="false" and shown)

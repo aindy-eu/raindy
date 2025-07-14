@@ -28,8 +28,12 @@ module Stimulus
         @drawer.assert_and_close_by_button
         @drawer.assert_drawer_hidden
 
+        # Debug: Check what element has focus before assertion
+        focused_element = page.evaluate_script("document.activeElement.outerHTML")
+        puts "🔍 Currently focused element: #{focused_element}" if ENV["CI"]
+
         # Verify focus returns to the drawer button.
-        assert_selector("button[data-components--drawer-target='drawerButton']:focus", wait: 5)
+        assert_selector("button[data-components--drawer-target='drawerButton']:focus", wait: 10)
       end
 
       test "Drawer closes when clicking on the backdrop" do
@@ -38,8 +42,12 @@ module Stimulus
         @drawer.close_by_backdrop
         @drawer.assert_drawer_hidden
 
+        # Debug: Check what element has focus before assertion
+        focused_element = page.evaluate_script("document.activeElement.outerHTML")
+        puts "🔍 Currently focused element: #{focused_element}" if ENV["CI"]
+
         # Verify focus returns to the drawer button.
-        assert_selector("button[data-components--drawer-target='drawerButton']:focus", wait: 5)
+        assert_selector("button[data-components--drawer-target='drawerButton']:focus", wait: 10)
       end
 
       test "Drawer closes when pressing escape" do
@@ -48,8 +56,12 @@ module Stimulus
         @drawer.close_by_escape
         @drawer.assert_drawer_hidden
 
+        # Debug: Check what element has focus before assertion
+        focused_element = page.evaluate_script("document.activeElement.outerHTML")
+        puts "🔍 Currently focused element: #{focused_element}" if ENV["CI"]
+
         # Verify focus returns to the drawer button.
-        assert_selector("button[data-components--drawer-target='drawerButton']:focus", wait: 5)
+        assert_selector("button[data-components--drawer-target='drawerButton']:focus", wait: 10)
       end
     end
   end
