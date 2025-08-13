@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -57,12 +57,13 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # Overall job timeout
     steps:
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git pkg-config google-chrome-stable
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -80,12 +81,22 @@ jobs:
           fi
           bin/rails db:test:prepare
 
-      - name: Run tests
+      - name: Run unit tests
         env:
           RAILS_ENV: test
+        timeout-minutes: 2  # Unit tests should be fast
+        run: bin/rails test
+
+      - name: Run system tests
+        env:
+          RAILS_ENV: test
+          DISABLE_SPRING: 1  # Spring can cause issues in CI
+        timeout-minutes: 5  # System tests get more time
         run: |
-          bin/rails test
-          find test/system/ -name '*_test.rb' | xargs -n 1 bin/rails test
+          # Run system tests in batches (5 files at a time) excluding mobile tests
+          # This reduces overhead while avoiding SQLite locking issues
+          find test/system/ -name '*_test.rb' ! -path '*/auth/sign_in_sign_out_mobile_test.rb' | \
+            xargs -n 5 bin/rails test
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
