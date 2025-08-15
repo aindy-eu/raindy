@@ -15,16 +15,17 @@ class AlertAutoCloseTest < ApplicationSystemTestCase
     page.execute_script(<<~JS)
       const alert = document.createElement('div');
       alert.setAttribute('data-controller', 'components--alert');
-      alert.setAttribute('data-components--alert-delay-value', '2000');
+      alert.setAttribute('data-components--alert-delay-value', '1000');
       alert.textContent = 'This is a test alert';
       alert.classList.add('alert');
       document.body.appendChild(alert);
     JS
 
-    assert_selector ".alert", text: "This is a test alert", wait: 5
+    # First verify the alert appears
+    assert_selector ".alert", text: "This is a test alert", wait: 2
 
-    sleep 10 # Wait a bit longer than the 1-second auto-dismiss
-
+    # Wait for auto-dismiss (1 second delay + buffer time)
+    # Using Capybara's built-in waiting instead of sleep
     assert_no_selector ".alert", wait: 5
   end
 end
