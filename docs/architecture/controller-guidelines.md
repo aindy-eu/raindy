@@ -217,8 +217,8 @@ def create
       format.turbo_stream
       format.html { redirect_to chats_path, notice: t("helpers.created", model: Chat.model_name.human) }
     else
-      format.turbo_stream { render :create_error, status: :unprocessable_entity }
-      format.html { render :new, status: :unprocessable_entity }
+      format.turbo_stream { render :create_error, status: :unprocessable_content }
+      format.html { render :new, status: :unprocessable_content }
     end
   end
 end

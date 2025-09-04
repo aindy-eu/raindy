@@ -187,7 +187,7 @@ end
 
 **Notes**:
 - Use `format: :turbo_stream` in requests.
-- Test errors (e.g., `assert_response :unprocessable_entity` for invalid data).
+- Test errors (e.g., `assert_response :unprocessable_content` for invalid data).
 - See [Controller Testing Guidelines](/docs/testing/controller-testing-guidelines.md) and [Integration Testing Guidelines](/docs/testing/integration-testing-guidelines.md).
 
 ## 3. Conventions

@@ -22,7 +22,7 @@ module Chats
     test "user fails to update a chat via HTML with invalid data" do
       html_update_chat(@chat, name: "")
 
-      assert_response :unprocessable_entity
+      assert_response :unprocessable_content
       assert_select "form[action*='#{chat_path(@chat)}']"
       assert_chat_name_errors
     end
@@ -38,8 +38,8 @@ module Chats
     test "user fails to update chat via Turbo Stream and sees form errors" do
       turbo_update_chat(@chat, name: "")
 
-      assert_response :unprocessable_entity
-      assert_turbo_stream status: :unprocessable_entity, action: "update", target: dom_id(@chat) do
+      assert_response :unprocessable_content
+      assert_turbo_stream status: :unprocessable_content, action: "update", target: dom_id(@chat) do
         assert_select "form[action*='#{chat_path(@chat)}']"
         assert_chat_name_errors
       end

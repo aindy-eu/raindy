@@ -93,9 +93,16 @@ jobs:
           DISABLE_SPRING: 1  # Spring can cause issues in CI
         timeout-minutes: 5  # System tests get more time
         run: |
-          # Run system tests in batches (5 files at a time) excluding mobile tests
-          # This reduces overhead while avoiding SQLite locking issues
-          find test/system/ -name '*_test.rb' ! -path '*/auth/sign_in_sign_out_mobile_test.rb' | \
+          # Run drawer tests individually (they need isolation due to shared dialog state)
+          # Run other system tests in batches for better performance
+          echo "Running drawer tests (isolated)..."
+          find test/system/dashboard/drawer -name '*_test.rb' | \
+            xargs -n 1 bin/rails test
+          
+          echo "Running other system tests (batched)..."
+          find test/system/ -name '*_test.rb' \
+            ! -path '*/dashboard/drawer/*' \
+            ! -path '*/auth/sign_in_sign_out_mobile_test.rb' | \
             xargs -n 5 bin/rails test
 
       - name: Keep screenshots from failed system tests

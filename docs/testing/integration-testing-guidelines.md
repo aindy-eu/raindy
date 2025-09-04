@@ -147,7 +147,7 @@ Test success/error messages:
 ```ruby
 test "user fails to create a chat with invalid data" do
   post chats_url, params: { chat: { name: "" } }
-  assert_response :unprocessable_entity
+  assert_response :unprocessable_content
   assert_select ".error", text: I18n.t("errors.messages.blank")
 end
 ```

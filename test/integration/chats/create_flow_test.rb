@@ -31,7 +31,7 @@ module Chats
     test "chat creation fails with invalid name and form re-renders" do
       html_create_chat(name: "")
 
-      assert_response :unprocessable_entity
+      assert_response :unprocessable_content
       assert_select "form[action*='#{chats_path}']"
 
       assert_chat_name_errors

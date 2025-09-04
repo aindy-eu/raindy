@@ -20,7 +20,7 @@ class ChatsControllerUpdateTest < ActionDispatch::IntegrationTest
   test "fails to update chat via HTML with invalid attributes" do
     html_update_chat(@chat, name: "")
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
     assert_not_equal "", @chat.reload.name
   end
 
@@ -35,14 +35,14 @@ class ChatsControllerUpdateTest < ActionDispatch::IntegrationTest
   test "fails to update chat via Turbo Stream with invalid attributes" do
     turbo_update_chat(@chat, name: "")
 
-    assert_turbo_stream status: :unprocessable_entity, action: "update", target: dom_id(@chat)
+    assert_turbo_stream status: :unprocessable_content, action: "update", target: dom_id(@chat)
     assert_not_equal "", @chat.reload.name
   end
 
   test "renders chat edit form with validation errors via Turbo Stream" do
     turbo_update_chat(@chat, name: "")
 
-    assert_turbo_stream status: :unprocessable_entity, action: "update", target: dom_id(@chat) do
+    assert_turbo_stream status: :unprocessable_content, action: "update", target: dom_id(@chat) do
       assert_select "form[data-controller='chats--chat-edit']"
       assert_select "div[role='tooltip']", text: /ausgefüllt/
     end

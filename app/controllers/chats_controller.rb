@@ -35,8 +35,8 @@ class ChatsController < ApplicationController
         format.html { redirect_to chats_path, notice: t("helpers.created", model: Chat.model_name.human) }
       else
         flash.now[:alert] = t("helpers.created_failed", model: Chat.model_name.human)
-        format.turbo_stream { render :create_error, status: :unprocessable_entity }
-        format.html { render :new, status: :unprocessable_entity }
+        format.turbo_stream { render :create_error, status: :unprocessable_content }
+        format.html { render :new, status: :unprocessable_content }
       end
     end
   end
@@ -50,8 +50,8 @@ class ChatsController < ApplicationController
         format.html { redirect_to @chat, notice: t("helpers.updated", model: Chat.model_name.human) }
       else
         flash.now[:alert] = t("helpers.update_failed", model: Chat.model_name.human)
-        format.turbo_stream { render :update_error, status: :unprocessable_entity }
-        format.html { render :edit, status: :unprocessable_entity }
+        format.turbo_stream { render :update_error, status: :unprocessable_content }
+        format.html { render :edit, status: :unprocessable_content }
       end
     end
   end
@@ -72,7 +72,7 @@ class ChatsController < ApplicationController
     else
       flash.now[:alert] = t("helpers.delete_failed", model: Chat.model_name.human)
       respond_to do |format|
-        format.turbo_stream { render :destroy_error, status: :unprocessable_entity }
+        format.turbo_stream { render :destroy_error, status: :unprocessable_content }
         format.html { redirect_to chats_path, alert: t("helpers.delete_failed", model: Chat.model_name.human) }
       end
     end
@@ -94,7 +94,7 @@ class ChatsController < ApplicationController
     Rails.logger.warn("Chat deletion failed: #{e.message}")
     flash.now[:alert] = t("helpers.delete_failed", model: Chat.model_name.human)
     respond_to do |format|
-      format.turbo_stream { render :destroy_error, status: :unprocessable_entity }
+      format.turbo_stream { render :destroy_error, status: :unprocessable_content }
       format.html { redirect_to chats_path, alert: t("helpers.delete_failed", model: Chat.model_name.human) }
     end
   end

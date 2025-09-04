@@ -183,7 +183,7 @@ Test invalid inputs or error states.
 ```ruby
 test "user fails to create chat with blank name" do
   post chats_url, params: { chat: { name: "" } }
-  assert_response :unprocessable_entity
+  assert_response :unprocessable_content
   assert_match I18n.t("activerecord.errors.models.chat.attributes.name.blank"), response.body
 end
 ```
