@@ -24,7 +24,6 @@ related_docs:
   - path: "/docs/architecture/stimulus-guidelines.md"
   - path: "/docs/architecture/stimulus-component-guidelines.md"
   - path: "/docs/architecture/technical-overview.md"
-  - path: "/docs/testing/stimulus-testing-guidelines.md"
 ---
 -->
 
@@ -199,7 +198,6 @@ openDrawer(event) {
   - [Stimulus Guidelines](/docs/architecture/stimulus-guidelines.md)
   - [Stimulus Component Guidelines](/docs/architecture/stimulus-component-guidelines.md)
   - [Technical Overview](/docs/architecture/technical-overview.md)
-  - [Stimulus Testing Guidelines](/docs/testing/stimulus-testing-guidelines.md)
   - [Architecture Overview](/docs/architecture/README.md)
   - [Turbo Guidelines](/docs/architecture/turbo-guidelines.md)
 - **External**:

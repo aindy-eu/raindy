@@ -83,6 +83,7 @@ graph TD
 - **Guidelines**:
   - [Diagrams README](/docs/diagrams/README.md)
   - [Architecture README](/docs/architecture/README.md)
+  - [Testing README](/docs/testing/README.md)
 - **External**:
   - [Mermaid Documentation](https://mermaid-js.github.io/mermaid/)
   

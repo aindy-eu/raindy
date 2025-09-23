@@ -26,7 +26,6 @@ related_docs:
   - path: "/docs/architecture/stimulus-dispatch-guidelines.md"
   - path: "/docs/architecture/technical-overview.md"
   - path: "/docs/architecture/README.md"
-  - path: "/docs/testing/stimulus-testing-guidelines.md"
 ---
 -->
 
@@ -297,8 +296,6 @@ Test components using Stimulus testing helpers, focusing on:
 - DOM interactions (e.g., `aria-expanded` in `dropdown_controller.js`).
 - Accessibility (e.g., keyboard navigation, ARIA roles).
 
-See [Stimulus Testing Guidelines](/docs/testing/stimulus-testing-guidelines.md) for details.
-
 
 ## 8. Related Resources
 - **Code**:
@@ -312,7 +309,6 @@ See [Stimulus Testing Guidelines](/docs/testing/stimulus-testing-guidelines.md) 
   - [Stimulus Guidelines](/docs/architecture/stimulus-guidelines.md)
   - [Stimulus Dispatch Guidelines](/docs/architecture/stimulus-dispatch-guidelines.md)
   - [Technical Overview](/docs/architecture/technical-overview.md)
-  - [Stimulus Component Testing](/docs/testing/stimulus-testing-guidelines.md)
   - [Architecture Overview](/docs/architecture/README.md)
 - **External**:
   - [Stimulus Handbook](https://stimulus.hotwired.dev/handbook/introduction)
