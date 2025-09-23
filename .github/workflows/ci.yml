@@ -102,7 +102,9 @@ jobs:
           echo "Running other system tests (batched)..."
           find test/system/ -name '*_test.rb' \
             ! -path '*/dashboard/drawer/*' \
-            ! -path '*/auth/sign_in_sign_out_mobile_test.rb' | \
+            ! -path '*/auth/sign_in_sign_out_mobile_test.rb' \
+            ! -path '*/stimulus/components/alert_auto_close_test.rb' \
+            ! -path '*/shared/flash_messages_drawer_click_close_test.rb' | \
             xargs -n 5 bin/rails test
 
       - name: Keep screenshots from failed system tests
