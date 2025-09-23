@@ -75,6 +75,7 @@ The [Testing Glossary](/docs/testing/testing-glossary.md) defines terms like Fac
   - [Testing Glossary](/docs/testing/testing-glossary.md)
   - [Diagrams README](/docs/diagrams/README.md)
   - [Architecture README](/docs/architecture/README.md)
+  - [Testing README](/docs/testing/README.md)
 - **External**:
   - [Rails Documentation](https://guides.rubyonrails.org/)
   - [Turbo Documentation](https://turbo.hotwired.dev/)

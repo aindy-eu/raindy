@@ -27,7 +27,6 @@ related_docs:
   - path: "/docs/architecture/stimulus-dispatch-guidelines.md"
   - path: "/docs/architecture/technical-overview.md"
   - path: "/docs/architecture/README.md"
-  - path: "/docs/testing/stimulus-testing-guidelines.md"
 ---
 -->
 
@@ -228,7 +227,6 @@ In `application.html.erb`, `<div data-controller="debug--turbo-listener"></div>`
   - [Stimulus Dispatch Guidelines](/docs/architecture/stimulus-dispatch-guidelines.md)
   - [Technical Overview](/docs/architecture/technical-overview.md)
   - [Architecture Overview](/docs/architecture/README.md)
-  - [Stimulus Testing Guidelines](/docs/testing/stimulus-testing-guidelines.md)
 - **External**:
   - [Stimulus Handbook](https://stimulus.hotwired.dev/handbook/introduction)
   - [Stimulus Reference](https://stimulus.hotwired.dev/reference/controllers)

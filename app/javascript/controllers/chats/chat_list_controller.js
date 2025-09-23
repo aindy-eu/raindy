@@ -101,7 +101,7 @@ export default class extends BaseController {
   // Action bound to this controller, that get dispatch
   // components--drawer:open@window->chats--chat-list#openDrawer
   openDrawer({ detail: { open } }) {
-    console.log("disptached 'open' - openDrawer 💜 ", open);
+    console.log("dispatched 'open' - openDrawer 💜 ", open);
     if (open) {
       this.#restoreFocus();
     } else {
